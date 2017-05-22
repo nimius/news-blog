@@ -33,8 +33,8 @@ If you create or edit a record, the backend user you're currently logged in as w
 
 Filter articles by author
 -------------------------
-Although only available through TypoScript, you can utilize ``plugin.tx_news.settings.authors`` to filter records by author(s). It takes a comma-separated list of backend user id's to filter records. This way, you can set up author pages with a list of their
-articles.
+You can utilize TypoScript setting ``plugin.tx_news.settings.authors`` or GP param ``tx_news_pi1[overwriteDemand][authors]`` to filter records by author(s) where the first takes precedence over the latter. Both take a comma-separated list of backend user id's to filter records. This way, you can set up author pages with a list of their
+articles or filter the news list by author.
 
 RTE transformation service to support code formatting
 -----------------------------------------------------
