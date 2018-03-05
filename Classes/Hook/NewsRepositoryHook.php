@@ -41,9 +41,18 @@ class NewsRepositoryHook
     {
         $this->getSettings();
 
+        $authors = null;
+
         // Add authors constraint
         if (!empty($this->settings['authors'])) {
-            $authors = GeneralUtility::trimExplode(',', $this->settings['authors']);
+            $authors = GeneralUtility::intExplode(',', $this->settings['authors'], true);
+        } else {
+            $gp = GeneralUtility::_GP('tx_news_pi1');
+            if ($gp['overwriteDemand'] && $gp['overwriteDemand']['authorId']) {
+                $authors = GeneralUtility::intExplode(',', $gp['overwriteDemand']['authorId'], true);
+            }
+        }
+        if ($authors) {
             $params['constraints'][] = $params['query']->in('author_id', $authors);
         }
     }
