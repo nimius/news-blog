@@ -4,6 +4,8 @@ NewsBlog extension
 
 Extends tx_news with blog-like features.
 
+**THIS EXTENSION IS NOT MAINTAINED ANYMORE!** We do not provide support for this code anymore. If you want to take over this project, feel free to fork or re-upload it under your own namespace.
+
 
 Features
 ========
